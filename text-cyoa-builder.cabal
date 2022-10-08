@@ -1,0 +1,97 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.7.
+--
+-- see: https://github.com/sol/hpack
+
+name:               text-cyoa-builder
+version:            0
+build-type:         Simple
+
+library
+    exposed-modules:
+        Game.Exception
+        Game.GameRule
+        Game.GameRule.Types
+        Game.GameState
+        Game.GameState.Environment
+        Game.GameState.GameVar
+        Game.GameState.Passage
+        Game.GameState.Types
+        Game.Save
+    other-modules:
+        Paths_text_cyoa_builder
+    hs-source-dirs:
+        src
+    default-extensions:
+        ImportQualifiedPost
+        OverloadedStrings
+        TypeApplications
+        OverloadedRecordDot
+    ghc-options: -Wall
+    build-depends:
+        base,
+        containers,
+        derive-over-field,
+        exceptions,
+        lens,
+        text,
+        transformers
+    default-language: Haskell2010
+
+executable text-cyoa-builder
+    main-is: Main.hs
+    other-modules:
+        App.Command
+        App.Command.Parse
+        App.Command.Types
+        App.Exception
+        App.Render
+        App.State
+        Paths_text_cyoa_builder
+    hs-source-dirs:
+        app
+    default-extensions:
+        ImportQualifiedPost
+        OverloadedStrings
+        TypeApplications
+        OverloadedRecordDot
+    ghc-options: -Wall
+    build-depends:
+        base,
+        containers,
+        derive-over-field,
+        exceptions,
+        interact,
+        lens,
+        megaparsec,
+        mtl,
+        text,
+        text-cyoa-builder,
+        transformers
+    default-language: Haskell2010
+
+test-suite test
+    type: exitcode-stdio-1.0
+    main-is: MyLibTest.hs
+    other-modules:
+        Paths_text_cyoa_builder
+    hs-source-dirs:
+        test
+    default-extensions:
+        ImportQualifiedPost
+        OverloadedStrings
+        TypeApplications
+        OverloadedRecordDot
+    ghc-options: -Wall
+    build-depends:
+        QuickCheck,
+        base,
+        containers,
+        derive-over-field,
+        exceptions,
+        hspec,
+        lens,
+        text,
+        transformers
+    default-language: Haskell2010

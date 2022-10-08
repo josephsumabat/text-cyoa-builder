@@ -1,0 +1,44 @@
+name:    text-cyoa-builder
+version: "0"
+
+dependencies:
+  - base
+  - derive-over-field
+  - containers
+  - exceptions
+  - text
+  - transformers
+  - lens
+
+ghc-options: -Wall
+  
+library:
+  source-dirs: src
+
+executables:
+  text-cyoa-builder:
+    main: Main.hs
+    source-dirs:
+      - app
+    dependencies:
+      - text-cyoa-builder
+      - interact
+      - megaparsec
+      - mtl
+      - text
+
+tests:
+  test:
+    main: MyLibTest.hs
+    source-dirs:
+      - test
+    dependencies:
+    - QuickCheck
+    - hspec
+
+default-extensions:
+  - ImportQualifiedPost
+  - OverloadedStrings
+  - TypeApplications
+  - OverloadedRecordDot
+
